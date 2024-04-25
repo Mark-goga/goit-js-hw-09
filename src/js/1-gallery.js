@@ -89,5 +89,6 @@ const stringForImages = images.reduce((value, image) => {
 </li>
 `
 }, '')
-
-var lightbox = new SimpleLightbox('.gallery li a', { /* options */ });
+const listEl = document.querySelector(".gallery");
+listEl.insertAdjacentHTML('afterbegin', stringForImages);
+var lightbox = new SimpleLightbox('.gallery a', { /* options */ });
