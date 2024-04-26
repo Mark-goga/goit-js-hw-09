@@ -7,8 +7,13 @@ const textAreaEl = formEl.elements.message;
 const inputEl = formEl.elements.email;
 formEl.addEventListener('submit', (evn) => {
     evn.preventDefault();
-    localStorage.removeItem("feedback-form-state");
-    formEl.reset();
+    if (formData.email && formData.message) {
+        console.log(formData);
+        localStorage.removeItem("feedback-form-state");
+        formEl.reset();
+    } else {
+        alert("Fill please all fields");
+    }
 })
 
 formEl.addEventListener('input', (evn) => {
