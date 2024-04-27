@@ -8,10 +8,10 @@ const inputEl = formEl.elements.email;
 formEl.addEventListener('submit', (evn) => {
     evn.preventDefault();
     const savedData = JSON.parse(localStorage.getItem("feedback-form-state"));
-    formData.email = savedData.email;
-    formData.message = savedData.message;
-    if (formData.email && formData.message) {
-        console.log(formData)
+    if (savedData && savedData.email && savedData.message) {
+        formData.email = savedData.email;
+        formData.message = savedData.message;
+        console.log(formData);
         localStorage.removeItem("feedback-form-state");
         formEl.reset();
     } else {
