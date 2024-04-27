@@ -11,8 +11,7 @@ formEl.addEventListener('submit', (evn) => {
     formData.email = savedData.email;
     formData.message = savedData.message;
     if (formData.email && formData.message) {
-        console.log("formData.message:", formData.message);
-        console.log("formData.email:", formData.email);
+        console.log(formData)
         localStorage.removeItem("feedback-form-state");
         formEl.reset();
     } else {
